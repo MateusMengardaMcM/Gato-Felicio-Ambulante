@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+</head>
+<body>
+
+    <h1>Gato mago mágico ambulante que foge do cachorro felpúcio</h1>
+
+    <div id="dialogo">
+        Bem-vindo! Use as setas para mover o gato mago mágico ambulante que foge do cachorro felpúcio!
+    </div>
+
+    <div id="game-container">
+        <img id="player" src="mago.png" alt="Gato Ambulante Felício">
+        <img id="enemy" src="enemy.png" alt="Cachorro Orelhudo Felpudo">
+    </div>
+
+    <h3>Vida do jogador</h3>
+    <div class="vida-container">
+        <div id="vida-player" class="vida"></div>
+    </div>
+
+    <h3>Vida do inimigo</h3>
+    <div class="vida-container">
+        <div id="vida-inimigo" class="vida"></div>
+    </div>
+
+    <button class="btn dano" onclick="alterarVida(-20)">DANO FELPÚCIO</button>
+    <button class="btn cura" onclick="alterarVida(+20)">COMER FRANGO DE VIDA</button>
+    <button class="btn loja" onclick="abrirLoja()">LOJA FELÍCIA</button>
+    <button class="btn ataque" onclick="ataqueEspecial()">ATACAR COM BOMBA NUCLEAR</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
