@@ -8,6 +8,6 @@ document.addEventListener("keydown",(e)=> {
     if (e.key === "ArrowRight" && posX < 510) posX += 20;
     document.getElementById("player").style.left = posX + "px";
     if (e.key === "ArrowUp" && posY > 10) posY -= 20;  
-    if (e.key === "ArrowDown" && posY < 500) posY += 20;
+    if (e.key === "ArrowDown" && posY < 490) posY += 20;
     document.getElementById("player").style.top = posY + "px";
 })
