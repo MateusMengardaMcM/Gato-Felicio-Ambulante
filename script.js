@@ -7,30 +7,6 @@ let posX = 260;
 let posY = 320;
 
 document.addEventListener("keydown",(e)=> {
-    /*
-    let moved = false;
-    if (e.key === "ArrowLeft" && posX > 10) {
-        posX -= 20;
-        moved = true;
-    }
-    if (e.key === "ArrowRight" && posX < 510) {
-        posX += 20;
-        moved = true;
-    }
-
-    if (e.key === "ArrowUp" && posY > 10) {
-        posY -= 20; 
-        moved = true;
-    }
-    if (e.key === "ArrowDown" && posY < limiteY) {
-        posY += 20;
-        moved = true;
-    }
-    if (moved) {
-        player.style.left = posX + "px";
-        player.style.top = posY + "px";
-    }*/
-   
    switch (e.key) {
     case "ArrowLeft":
         if (posX - 20 >= 0) posX -=20;
@@ -54,3 +30,28 @@ document.addEventListener("keydown",(e)=> {
     player.style.left = posX + "px";
     player.style.top = posY + "px";
 })
+
+function alterarVida(valor) {
+    vidaJogador += valor;
+    if (vidaJogador > 100) vidaJogador = 100;
+    if (vidaJogador < 0) vidaJogador = 0;
+    let barra = document.getElementById("vida-player");
+    barra.style.width = vidaJogador + "%";
+    barra.style.background = vidaJogador > 60 ? 'green' : vidaJogador > 30 ? 'yellow' : 'red';
+    if (vidaJogador === 0) document.getElementById("dialogo").innerText = "QUE BETINHA!!!!!! VOCÊ PERDEU!";
+}
+
+function abrirLoja() {
+    let escolha = confirm("BORA TOMA UMA POR 10 CONTO??");
+    if (escolha) alterarVida(30);
+}
+
+function ataqueEspecial() {
+    vidaInimigo -= 25;
+    if (vidaInimigo < 0) vidaInimigo = 0;
+    let barra = document.getElementById("vida-inimigo");
+    barra.style.width = vidaInimigo + "%";
+    document.getElementById("enemy").style.transform = "scale(1.2)";
+    setTimeout(() => document.getElementbyId("enemy").style.transform = "scale(1)", 200);
+    if (vidaInimigo === 0)document.getElementById("dialogo").innerText = "TU MATOU O PITBULL CACHORROLOCO!!!";
+}
